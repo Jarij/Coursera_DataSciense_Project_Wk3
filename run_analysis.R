@@ -36,7 +36,7 @@ My_Data <- cbind(features_Data, combined_Data)
 
 subdata_names_features_Data <- names_features_Data$V2[grep("mean\\(\\)|std\\(\\)", names_features_Data$V2)]
 selected_Names <- c(as.character(subdata_names_features_Data), "Subject", "Activity" )
-My_Data<-subset(My_Data,select=selected_Names)
+My_final_Data<-subset(My_Data,select=selected_Names)
 
 # Read descriptive activity names from “activity_labels.txt”
 
@@ -44,18 +44,19 @@ Labels <- read.table("C:\\Users\\jari\\Data_Science\\working_Dir\\data\\UCI HAR 
 
 # SIMPLIFYING COLUMN NAMES
 
-names(My_Data) <- gsub("^t", "Time", names(My_Data))
-names(My_Data) <- gsub("^f", "Frequency", names(My_Data))
-names(My_Data) <- gsub("Acc", "Accelerometer", names(My_Data))
-names(My_Data) <- gsub("Gyro", "GyroScope", names(My_Data))
-names(My_Data) <- gsub("Mag", "Magnitude", names(My_Data))
-names(My_Data) <- gsub("BodyBody", "Body", names(My_Data))
+names(My_Final_Data) <- gsub("^t", "Time", names(My_Final_Data))
+names(My_Final_Data) <- gsub("^f", "Frequency", names(My_Final_Data))
+names(My_Final_Data) <- gsub("Acc", "Accelerometer", names(My_Final_Data))
+names(My_Final_Data) <- gsub("Gyro", "GyroScope", names(My_Final_Data))
+names(My_Final_Data) <- gsub("Mag", "Magnitude", names(My_Final_Data))
+names(My_Final_Data) <- gsub("BodyBody", "Body", names(My_Final_Data))
 
 #---------------------------------------------------------------------
+#
 # CREATING Tidy Data (Stored to working directory)
 
 library(plyr);
 
-Tidy_Data <- aggregate(. ~Subject + Activity, My_Data, mean)
+Tidy_Data <- aggregate(. ~Subject + Activity, My_Final_Data, mean)
 Tidy_Data <- Tidy_Data[order(Tidy_Data$Subject,Tidy_Data$Activity),]
 write.table(Tidy_Data, file = "tidydata.txt",row.name=FALSE)
