@@ -36,7 +36,7 @@ My_Data <- cbind(features_Data, combined_Data)
 
 subdata_names_features_Data <- names_features_Data$V2[grep("mean\\(\\)|std\\(\\)", names_features_Data$V2)]
 selected_Names <- c(as.character(subdata_names_features_Data), "Subject", "Activity" )
-My_final_Data<-subset(My_Data,select=selected_Names)
+My_Final_Data<-subset(My_Data,select=selected_Names)
 
 # Read descriptive activity names from “activity_labels.txt”
 
