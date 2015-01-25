@@ -1,0 +1,45 @@
+Files used from original Data SET:
+
+ The files that will be used to load data are listed in the order mentioned in the readme.txt-file:
+ - 'activity_labels.txt'	: Link between the class labels and activity names
+ - 'X_train.txt'		      : Training set
+ - 'y_train.txt'		      : Training labels
+ - 'X_test.txt'		        : Test set
+ - 'y_test.txt'		        : Test labels
+ - 'subject_train.txt'	: Each row identifies the subject who performed the activity for each window sample.
+ 
+ logical descriptive names : Features, Activity and Subject.
+ 
+ FEATURES
+ features_Test_Data = X_test.txt of the original data set
+ features_Train_Data = X_train.txt
+ 
+ ACTIVITIES
+ activity_Test_Dat = Y_test.txt
+ activity_Train_Data = Y_train.txt
+ 
+ SUBJECTS
+ subject_Train_Data = subject_train.txt
+ subject_Test_Data = subject_test.txt
+ 
+ MERGED FILES
+ FEATURE FILES:  features_Data  -- features_Test_Data AND features_Train_Data
+ ACTIVITY FILES: activity_Data  -- activity_Test_Data AND activity_Train_Data
+ SUBJECT FILES:  subject_Data   -- subject_Train_Data AND subject_Test_Data
+ 
+ Variable files:
+ names_features_Data = features.txt from original data set
+ Column V2 is the important one
+ Activity_Data column is named as Activity
+ subject_Data column is named as Subject
+ 
+ Final Data-Frame:
+ combined_Data = activity_Data AND subject_Data
+ My_Data = features_Data AND combined_Data
+ 
+ subdata_names_features_Data = only mean values collected from names_features_Data$V2
+ selected_Names = "Subject" AND "Activity"
+ My_final_Data = subset of My_Data where only Subject and Activity are selected
+ 
+ Labels = activity_labels.txt from the original Data set
+ 
