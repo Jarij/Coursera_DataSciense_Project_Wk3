@@ -1,4 +1,7 @@
-
+# before copying or executing this ... see readme.md file for assumptions
+# This is for WINDOWS 8 machines only and working Directory is C:\\Users\\jari\\Data_Science\\working_Dir\\data
+# In case of executing elsewhere yu must replace relevant parts of scripts with your own definitions.
+#
 # Loading FEATURES to tables (features_Test_Data, features_Train_Data)
 
 features_Test_Data <- read.table("C:\\Users\\jari\\Data_Science\\working_Dir\\data\\UCI HAR Dataset\\test\\X_test.txt",header = FALSE)
